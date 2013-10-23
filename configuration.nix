@@ -10,6 +10,8 @@
   imports =
     [
       ./hardware-configuration.nix
+      ./modules/misc.nix
+      ./modules/config.nix
     ];
 
 
@@ -33,16 +35,10 @@
   ### Filesystems to Mount
 
 
-  ### Locale
-  i18n = {
-    #consoleFont = "lat9w-16";
-    consoleKeyMap = "us";
-    defaultLocale = "en_US.UTF-8";
-  };
-
-
   ### Services
   services.openssh.enable = true;
+
+  services.locate.enable = true;
   services.nixosManual.showManual = true;
 
   services.xserver.enable = true;
@@ -66,12 +62,5 @@
       useDefaultShell = true;
     } ];
   };
-
-  ### Nix Packages
-  environment.systemPackages = with pkgs;
-    [
-      git
-      xclip
-    ];
 
 }
