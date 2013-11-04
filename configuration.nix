@@ -12,6 +12,7 @@
       ./hardware-configuration.nix
       ./modules/misc.nix
       ./modules/config.nix
+      ./modules/common-http.nix
     ];
 
 
@@ -45,6 +46,16 @@
   services.xserver.displayManager.kdm.enable = true;
   services.xserver.desktopManager.kde4.enable = true;
 
+  #services.httpd.enable       = true;
+  #services.httpd.adminAddr    = "chexxor@gmail.com";
+  #services.httpd.enableSSL    = true;
+  services.httpd = {
+    enable    = true;
+    adminAddr = "chexxor@gmail.com";
+    enableSSL = true;
+  };
+  #services.httpd.documentRoot = /data/nix-binary-cache;
+
 
   ### Security
 
@@ -62,5 +73,6 @@
       useDefaultShell = true;
     } ];
   };
+
 
 }

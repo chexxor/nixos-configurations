@@ -22,13 +22,15 @@
   };
 
   swapDevices = [
-    #{ device = "/dev/sda3"; size = 1024; }
-    #{ labell = "swap"; swap = 2048; }
+    { label = "swap"; }
   ];
 
   environment.systemPackages = with pkgs; [
-    git
+    openssl
     xclip
+    gparted
+
+    git
   ];
 
   time.timeZone = "Asia/Taipei";
