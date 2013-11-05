@@ -46,15 +46,13 @@
   services.xserver.displayManager.kdm.enable = true;
   services.xserver.desktopManager.kde4.enable = true;
 
-  #services.httpd.enable       = true;
-  #services.httpd.adminAddr    = "chexxor@gmail.com";
-  #services.httpd.enableSSL    = true;
   services.httpd = {
     enable    = true;
     adminAddr = "chexxor@gmail.com";
     enableSSL = true;
+    documentRoot = /data/nix-binary-cache;
+    port      = 8080;
   };
-  #services.httpd.documentRoot = /data/nix-binary-cache;
 
 
   ### Security

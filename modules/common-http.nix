@@ -37,7 +37,7 @@
     multiProcessingModule = "prefork";
 
     ## Request Listening
-    port          = 0;
+    # port          = 0;
     serverAliases = [ ];
     virtualHosts  = [ ];
 
