@@ -42,8 +42,9 @@
   services.nixosManual.showManual = true;
 
   services.xserver.enable = true;
-  services.xserver.displayManager.kdm.enable = true;
-  services.xserver.desktopManager.kde4.enable = true;
+  #services.xserver.displayManager.kdm.enable = true;
+  #services.xserver.desktopManager.kde4.enable = true;
+  services.xserver.desktopManager.xfce.enable = true;
 
 
   ### Security
